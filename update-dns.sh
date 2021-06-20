@@ -27,8 +27,6 @@ for ID in "${RECORD_IDS[@]}"; do
   # )
 
   local_ip=$(curl --fail --silent -X GET -H "Content-Type: application/json" -H "Authorization: Bearer ${ACCESS_TOKEN}" "https://api.digitalocean.com/v2/domains/${DOMAIN}/records/${ID}" | jq '.domain_record["data"]')
-  echo $local_ip
-
 
   # if the IPs are the same just exit
   [ "$local_ip" == "$public_ip" ] && exit 0
