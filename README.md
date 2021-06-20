@@ -4,6 +4,11 @@ A dependency free bash script to dynamically update your DNS on DigitalOcean.
 
 I wanted a dynamic DNS updater that I could control. There are a LOT of scripts out there that do it written in PHP, Python, Go, Perl, Node, etc. I couldn't find one (other than Nicu's) that could just run in bash with cURL.
 
+# Depends
+
+This depends on `curl` and `jq` commands. Had issues with the grep commands but jq qorks well
+
+
 # Links
 
 You can create a DigitalOcean personal access token here: https://cloud.digitalocean.com/account/api/tokens
