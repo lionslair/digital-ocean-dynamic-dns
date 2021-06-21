@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-[ ! -f $CWD/secrets ] && \
-  echo "secrets file is missing! $CWD/secrets" && \
+[ ! -f $PWD/secrets ] && \
+  echo "secrets file is missing! $PWD/secrets" && \
   exit 1
 
-source $CWD/secrets
+source $PWD/secrets
 
 # Exit if the RECORD_IDS array has no elements
 [ ${#RECORD_IDS[@]} -eq 0 ] && \
