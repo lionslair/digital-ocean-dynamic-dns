@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-[ ! -f $PWD/secrets ] && \
-  echo "secrets file is missing! $PWD/secrets" && \
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+[ ! -f $SCRIPT_DIR/secrets ] && \
+  echo 'secrets file is missing!' && \
   exit 1
 
-source $PWD/secrets
+source "$SCRIPT_DIR/secrets"
 
 # Exit if the RECORD_IDS array has no elements
 [ ${#RECORD_IDS[@]} -eq 0 ] && \
